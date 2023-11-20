@@ -26,11 +26,6 @@ function preload() {
   zombie3 = loadImage("./assets/zombie3.png");
   zombie4 = loadImage("./assets/zombie4.png");
   sadzombie = loadImage("./assets/sad_zombie.png");
-  zombie_laugh = loadImage("./assets/zombie_laugh.png");
-
-  laugh = loadSound("./assets/laugh.mp3");
-  hit = loadSound("./assets/bell.mp3")
-
   backgroundImage = loadImage("./assets/background.png");
 }
 
@@ -84,11 +79,6 @@ function draw() {
     var distance = dist(zombie.position.x, zombie.position.y, pos.x, pos.y);
 
     if (distance <= 50) {
-      if(!hit.isPlaying())
-      {
-        hit.play();
-        hit.setVolume(3);
-      }
       zombie.velocityX = 0;
       Matter.Body.setVelocity(stone.body, { x: 10, y: -10 });
       zombie.changeImage("sad");
